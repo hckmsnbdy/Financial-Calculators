@@ -5,15 +5,16 @@ import java.util.Scanner;
 public class FinancialCalculators {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        // Greetings/Opening Message and Calculator Selection
         System.out.println("=====Welcome To the Financial Calculator=====");
-        //System.out.println("Please Choose a Calculator:");
         System.out.println("1. Mortgage Calculator");
         System.out.println("2. CD Calculator");
 
+        // Calculator input
         System.out.print("Please Choose a Calculator: ");
         int calculatorSelection = input.nextInt();
 
-
+        // Calculator Selection Conditions
         if (calculatorSelection == 1) {
             mortgageCalculator();}
 
@@ -40,21 +41,19 @@ public class FinancialCalculators {
         // Interest Rate input
         System.out.print("Enter the Interest Rate: ");
         double rateInterest = input.nextDouble();
+        double interestMonthly = (rateInterest/100)/12 ;
 
         // Term in years input
         System.out.print("Enter the Term in years: ");
         double yearsTerm = input.nextDouble();
-        // Variables
-        double interestMonthly = (rateInterest/100)/12 ;
+
+        // Variables and Formulas
         double numOfMonthlyPayment = yearsTerm*12;
         double monthlyPayment = amountMortgage * (interestMonthly * Math.pow(1 + interestMonthly, numOfMonthlyPayment) / (Math.pow(1 + interestMonthly, numOfMonthlyPayment) - 1));
         double interestTotal =  (monthlyPayment* numOfMonthlyPayment) - amountMortgage;
 
         // Printing Results
         System.out.printf("Your monthly payment is : %.2f%n", monthlyPayment);
-        System.out.printf("Your Loan amount is: %.2f%n", amountMortgage);
-        System.out.printf("Your Term is: %.0f months%n", numOfMonthlyPayment);
-        System.out.printf("Interest rate is: %.3f%%%n", rateInterest);
         System.out.printf("Your Total interest payment is: %.2f%n", interestTotal);
     }
 
@@ -70,23 +69,23 @@ public class FinancialCalculators {
     System.out.print("Enter the Deposit amount: ");
     double amountDeposit = input.nextDouble();
 
-
     // Interest Rate input
     System.out.print("Enter the Interest Rate: ");
     double rateInterest = input.nextDouble();
-
+    double annualRate = rateInterest/100; // Converted to decimal
 
     // Term in years input
     System.out.print("Enter the Term in years: ");
     double yearsTerm = input.nextDouble();
     double totalDays = yearsTerm*365;
 
-    double futureValue = amountDeposit * Math.pow(1 + (rateInterest / 365), totalDays);
+    // Future Value Formula
+    double futureValue = amountDeposit * Math.pow(1 + (annualRate / 365), totalDays);
     double totalInterest = futureValue - amountDeposit;
 
     //Result Printings
-        System.out.println("Future Value is: " + futureValue);
-        System.out.println("Total Interest Earned is: " + totalInterest);
+        System.out.printf("Future Value is: %.2f%n" , futureValue);
+        System.out.printf("Total Interest Earned is: %.2f%n" , totalInterest);
 
     }
 }
