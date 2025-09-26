@@ -9,6 +9,7 @@ public class FinancialCalculators {
         System.out.println("=====Welcome To the Financial Calculator=====");
         System.out.println("1. Mortgage Calculator");
         System.out.println("2. CD Calculator");
+        System.out.println("3. Annuity Calculator");
 
         // Calculator input
         System.out.print("Please Choose a Calculator: ");
@@ -16,10 +17,16 @@ public class FinancialCalculators {
 
         // Calculator Selection Conditions
         if (calculatorSelection == 1) {
-            mortgageCalculator();}
+            mortgageCalculator();
+        }
 
         else if (calculatorSelection == 2) {
-                cdCalculator();}
+                cdCalculator();
+        }
+
+        else if (calculatorSelection == 3) {
+                annuityCalculator();
+        }
         else {
                 System.out.println("Invalid Selection");}
     }
@@ -102,12 +109,18 @@ public class FinancialCalculators {
 
         System.out.println("2. Expected Interest Rate");
         double rateInterest = input.nextDouble();
+        double monthlyRate = (rateInterest/100)/12;
 
         System.out.print("Enter the Years to Pay Out: ");
         double amountYearsPayout = input.nextDouble();
+        double numPeriods =  amountYearsPayout * 12;
+
+        //Formula
+        double presentValue = amountMonthlyPayout * (1 - Math.pow(1 + monthlyRate, -numPeriods)) / monthlyRate;
 
         //Outputs
-        System.out.println("Present Value of Annuity is: " + amountMonthlyPayout);
+        System.out.printf("Present Monthly Value of Annuity is: %.2f%n", presentValue);
+
 
 
 
