@@ -36,7 +36,6 @@ public class FinancialCalculators {
         System.out.printf("Your Loan amount is: %.2f%n", amountMortgage);
         System.out.printf("Your Term is: %.0f months%n", numOfMonthlyPayment);
         System.out.printf("Interest rate is: %.3f%%%n", rateInterest);
-        //System.out.println("Your Total principal and interest payments is:" + interestTotal);
         System.out.printf("Your Total interest payment is: %.2f%n", interestTotal);
     }
 }
