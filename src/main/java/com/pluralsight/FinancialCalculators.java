@@ -6,25 +6,22 @@ public class FinancialCalculators {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("=====Welcome To the Financial Calculator=====");
-        System.out.println("Please Choose a Calculator:");
-        System.out.println("1. mortgage calculator");
+        //System.out.println("Please Choose a Calculator:");
+        System.out.println("1. Mortgage Calculator");
         System.out.println("2. CD Calculator");
 
         System.out.print("Please Choose a Calculator: ");
         int calculatorSelection = input.nextInt();
+
+
         if (calculatorSelection == 1) {
-            mortgageCalculator();
-        }
+            mortgageCalculator();}
 
         else if (calculatorSelection == 2) {
-                cdCalculator();
-                }
-
-
+                cdCalculator();}
         else {
-                System.out.println("Invalid Selection");
-            }
-            }
+                System.out.println("Invalid Selection");}
+    }
 
     // A mortgage calculator
     public static void mortgageCalculator() {
@@ -91,6 +88,5 @@ public class FinancialCalculators {
         System.out.println("Future Value is: " + futureValue);
         System.out.println("Total Interest Earned is: " + totalInterest);
 
-
-}
+    }
 }
