@@ -88,4 +88,28 @@ public class FinancialCalculators {
         System.out.printf("Total Interest Earned is: %.2f%n" , totalInterest);
 
     }
+    public static void annuityCalculator(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("=====Welcome To the Annuity Calculator=====");
+        System.out.println("Please enter required information:");
+        System.out.println("1. Monthly Payout");
+        System.out.println("2. Expected Interest Rate");
+        System.out.println("3. Years to Pay Out");
+
+        // Inputs
+        System.out.print("Enter the Monthly Payout: ");
+        double amountMonthlyPayout = input.nextDouble();
+
+        System.out.println("2. Expected Interest Rate");
+        double rateInterest = input.nextDouble();
+
+        System.out.print("Enter the Years to Pay Out: ");
+        double amountYearsPayout = input.nextDouble();
+
+        //Outputs
+        System.out.println("Present Value of Annuity is: " + amountMonthlyPayout);
+
+
+
+    }
 }
